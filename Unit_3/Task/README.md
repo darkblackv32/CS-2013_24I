@@ -9,7 +9,7 @@ Design and develop a function template equal_values that, in linear time O(n), a
 ```cpp
 container_1 = { 1, 4, 5, 19, 20, 11, 22, 1 };
 container_2 = { 1, 1, 4, 5, 11, 19, 20, 22 };
-
+```
 ```cpp
 // Use case #1
 int n = 0;
@@ -30,4 +30,4 @@ for(auto& item: deq1)
 for(auto& item: lis1)
     cin >> item;
 cout << equal_values(deq1, lis1) << endl;
-
+```
