@@ -31,3 +31,25 @@ for(auto& item: lis1)
     cin >> item;
 cout << equal_values(deq1, lis1) << endl;
 ```
+
+### Question #2
+Design and develop the function template `find_uncommon_elements` that allows generating from 2 containers a container that holds the uncommon values between them. Example:
+
+```cpp
+container_1 = { 1, 4, 15, 19, 20, 11, 22, 1 };
+container_2 = { 1, 1, 14, 5, 13, 19, 20, 22 };
+container_3 = {4, 5, 11, 13, 14, 15}; 
+```
+```cpp
+int n = 0;
+cin >> n;
+vector<int> vec1(n);
+vector<int> vec2(n);
+for(auto& item: vec1)
+    cin >> item;
+for(auto& item: vec2)
+    cin >> item;
+vector<int> res = find_uncommon_elements<vector>(vec1, vec2);
+for(const auto& item: res)
+    cout << item << " ";
+```
