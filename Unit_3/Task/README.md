@@ -53,3 +53,39 @@ vector<int> res = find_uncommon_elements<vector>(vec1, vec2);
 for(const auto& item: res)
     cout << item << " ";
 ```
+
+### Question #3
+Design and develop the function template `join_containers` that allows merging multiple containers (in a varied quantity of containers) and generates a container which defaults to a vector. The containers could be: list, vector, std::deque, std::forward_list.
+
+If the following containers are present:
+
+```cpp
+list<int> lst = {1, 2, 3, 4, 5}
+vector<int> vec = {6, 7, 8, 9, 10, 11, 12}
+deque<int> deq = {13, 14}
+
+Y si se llama:
+result = join_containers(lst, vec, deq)
+
+result contendria:
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+```
+
+```cpp
+// use case 1
+vector<int> v1 = {1, 2, 3};
+list<int> l1 = {4, 5, 6};
+vector<int> v2 = {7, 8, 9};
+deque<int> d1 = {10, 11, 12};
+auto res = join_containers(v1, l1, v2, d1);
+copy(begin(res), end(res), ostream_iterator<int>(cout, " "));
+```
+
+```cpp
+// use case 2
+vector<int> v = {1, 2, 3};
+list<int> l;
+forward_list<int> f = {7, 8, 9};
+auto res = join_containers(v, l, f);
+copy(begin(res), end(res), ostream_iterator<int>(cout, " "));
+```
